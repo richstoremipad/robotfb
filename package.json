@@ -1,0 +1,68 @@
+{
+  "name": "robotfb-underground-reborn",
+  "private": true,
+  "version": "1.2.4",
+  "author": "ROBOTFB Underground <admin@robotfb.xyz>",
+  "homepage": "https://robotfb.xyz",
+  "description": "ROBOTFB Underground Reborn - Facebook Automation Tool",
+  "main": "electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "start": "electron .",
+    "build:linux": "electron-builder --linux",
+    "build:win": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.robotfb.underground",
+    "productName": "ROBOTFB",
+    "directories": {
+      "output": "release"
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "deb",
+          "arch": [
+            "arm64"
+          ]
+        },
+        {
+          "target": "rpm",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ],
+      "icon": "dist/icon.png",
+      "category": "Utility"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "dist/icon.ico"
+    }
+  },
+  "dependencies": {
+    "axios": "^1.13.5",
+    "electron-store": "^8.2.0",
+    "form-data": "^4.0.5",
+    "lucide-react": "^0.475.0",
+    "node-machine-id": "^1.1.12",
+    "papaparse": "^5.5.3",
+    "playwright": "^1.58.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.6.1",
+    "recharts": "^3.7.0"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  }
+}
