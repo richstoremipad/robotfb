@@ -33,9 +33,9 @@ if (process.platform === 'linux') {
         SMART_BROWSER_CONFIG = {}; // Biarkan Playwright mencari sendiri
     }
 } else {
-    // Windows / Mac: Default pakai Chrome
+   // Windows / Mac: Default pakai Chrome
     console.log('[SYSTEM] Mendeteksi Windows/Mac, menggunakan channel Chrome');
-    SMART_BROWSER_CONFIG = { ...SMART_BROWSER_CONFIG };
+    SMART_BROWSER_CONFIG = { channel: 'chrome' };
 }
 
 const CRASH_LOG_DIR = _path.join(
@@ -6350,3 +6350,4 @@ app.on('window-all-closed', () => {
     writeCrashLog('LIFECYCLE', 'All windows closed — quitting');
     if (process.platform !== 'darwin') app.quit();
 });
+
