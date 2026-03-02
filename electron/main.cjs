@@ -26,7 +26,7 @@ if (process.platform === 'linux') {
     // Prioritas 3: Cek Google Chrome Linux
     else if (_fs.existsSync('/usr/bin/google-chrome')) {
         console.log('[SYSTEM] Menggunakan Google Chrome Linux');
-        SMART_BROWSER_CONFIG = { ...SMART_BROWSER_CONFIG };
+        SMART_BROWSER_CONFIG = { channel: 'chrome' };
     }
     else {
         console.log('[SYSTEM] Browser sistem tidak ditemukan, mencoba bundled...');
@@ -6350,4 +6350,5 @@ app.on('window-all-closed', () => {
     writeCrashLog('LIFECYCLE', 'All windows closed — quitting');
     if (process.platform !== 'darwin') app.quit();
 });
+
 
